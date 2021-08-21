@@ -139,8 +139,6 @@ namespace WebAppCakeShopeBoutiqe.Controllers
                 {
                     ViewData["Error"] = "Client name already exist., cannot register this client. ";
                 }
-
-               
             }
             return View(client);
         }
