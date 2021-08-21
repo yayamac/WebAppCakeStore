@@ -21,5 +21,7 @@ namespace WebAppCakeShopeBoutiqe.Data
         public DbSet<WebAppCakeShopeBoutiqe.Models.Category> Category { get; set; }
 
         public DbSet<WebAppCakeShopeBoutiqe.Models.CategoryImage> CategoryImage { get; set; }
+
+        //public DbSet<WebAppCakeShopeBoutiqe.Models.BannerImg> BannerImg { get; set; }
     }
 }
