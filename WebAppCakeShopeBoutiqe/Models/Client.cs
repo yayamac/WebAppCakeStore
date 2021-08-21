@@ -39,7 +39,7 @@ namespace WebAppCakeShopeBoutiqe.Models
 
 
         [Required(ErrorMessage = "Enter your email adrress")]
-        [StringLength(20)]
+        [StringLength(50)]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email Address")]
 

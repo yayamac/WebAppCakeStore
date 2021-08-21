@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAppCakeShopeBoutiqe.Data;
 
 namespace WebAppCakeShopeBoutiqe.Migrations
 {
     [DbContext(typeof(WebAppCakeShopeBoutiqeContext))]
-    partial class WebAppCakeShopeBoutiqeContextModelSnapshot : ModelSnapshot
+    [Migration("20210821084511_EmailLength")]
+    partial class EmailLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
