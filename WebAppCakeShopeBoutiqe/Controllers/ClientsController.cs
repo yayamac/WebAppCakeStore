@@ -144,12 +144,6 @@ namespace WebAppCakeShopeBoutiqe.Controllers
         }
 
 
-
-
-
-
-
-
         //// GET: Clients
         //public async Task<IActionResult> Index()
         //{
