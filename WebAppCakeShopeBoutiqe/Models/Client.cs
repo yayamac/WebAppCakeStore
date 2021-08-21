@@ -18,8 +18,6 @@ namespace WebAppCakeShopeBoutiqe.Models
         [Display(Name = "Full Name")]
         public string ClientName { get; set; }
 
-
-
         [Required(ErrorMessage = "Enter youre password")]
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$", ErrorMessage = "Enter stronger password")]
         [DataType(DataType.Password)]
