@@ -29,4 +29,5 @@ namespace WebAppCakeShopeBoutiqe.Migrations
                 name: "Client");
         }
     }
+
 }

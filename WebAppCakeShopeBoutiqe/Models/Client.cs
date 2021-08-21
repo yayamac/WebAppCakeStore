@@ -35,7 +35,6 @@ namespace WebAppCakeShopeBoutiqe.Models
 
         public string PasswordConfirm { get; set; }
 
-
         [Required(ErrorMessage = "Enter your email adrress")]
         [StringLength(50)]
         [DataType(DataType.EmailAddress)]
