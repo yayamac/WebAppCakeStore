@@ -8,8 +8,6 @@ namespace WebAppCakeShopeBoutiqe.Models
 {
     public class Product
     {
-       
-
         [Required]
         [Key]
         public int ProductId { get; set; } // Product ID
