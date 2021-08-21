@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -26,6 +26,10 @@ namespace WebAppCakeShopeBoutiqe.Controllers
 
         /*********************************  LOGIN  ****************************************/
 
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Client.ToListAsync());
+        }
 
         // GET: Clients/Login
         public IActionResult Login()
@@ -39,24 +43,21 @@ namespace WebAppCakeShopeBoutiqe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([Bind("ClientId,ClientName,Password,PasswordConfirm,EmailAddress")] Client client, string ReturnUrl)
-        {
-            if (ModelState.IsValid)
-            { 
+        public IActionResult Login([Bind("ClientId,ClientName,Password")] Client client, string ReturnUrl)
+        {            
                 var q = from c in _context.Client
                         where c.ClientName == client.ClientName && c.Password == client.Password
                         select c;
 
                 if (q.Count() > 0 )
                 {
-                    //HttpContext.Session.SetString("clientname", q.First().ClientName);
                     Signin(q.First());
-                    //return RedirectToAction(nameof(Index), "Home");
                 }
 
                 else
                 {
                     ViewData["Error"] = "Client name and/or Password are incorrect. ";
+                    return View();
                 }
 
                 if (ReturnUrl != null)
@@ -67,12 +68,8 @@ namespace WebAppCakeShopeBoutiqe.Controllers
                 {
                     return RedirectToAction(nameof(Index), "Home");
                 }
-
-
-            }
-
-            return View(client);
         }
+
         //Logout
         [Authorize]
         public async Task<IActionResult> Logout()
@@ -142,17 +139,9 @@ namespace WebAppCakeShopeBoutiqe.Controllers
                 {
                     ViewData["Error"] = "Client name already exist., cannot register this client. ";
                 }
-
-               
             }
             return View(client);
         }
-
-
-
-
-
-
 
 
         //// GET: Clients
